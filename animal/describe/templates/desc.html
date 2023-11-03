@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{color: blue;}
+        body {
+            background-color: rgb(0, 255, 132);
+        }
+        img {border: solid 5px rgb(227, 17, 17);
+            border-radius: 5px;
+            }
+        form {margin-left: 50px;}
+        table,th,td {border: solid 2px black;
+            border-collapse: collapse;}
+    
+        h2{color: rgb(20, 20, 227);}
+        td { padding-left: 15px;}
+        th { background-color: darkgreen;
+            color: white;}
+    </style>
+</head>
+<body>
+    {% load static %}
+    <center> <h1>USER DESCRIPTION</h1></center>
+    <br>
+    <center><img src="{% static "picture/image1.jpg" %}" alt="home" /></center>
+    <br><br>
+
+   <center> <form  action="desc" method="post">
+        {% csrf_token %}
+            Name: <input name="name" type="text">
+            <br><br>
+            Describe: <input name="text" type="text">
+            <br><br>
+            <input type="submit" value="SAVE">
+    </form></center>
+    <br><br>
+<center> <h2>User Description</h2> </center>
+<center> <p>
+    <table>
+        <tr>
+            <th width="150px"> User Name</th>
+            <th width="700px">Description</th>
+        </tr>
+        {% for data in allcomment %}
+        <tr>
+            <td>{{data.name}}</td>
+            <td>{{data.text}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</p></center>
+</body>
+</html>

@@ -1,0 +1,1 @@
+web: gunicorn set_1_sesi_2_2023.wsgi --log-file -

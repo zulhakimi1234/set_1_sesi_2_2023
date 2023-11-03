@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(0, 255, 132);
+        }
+        h1{color: blue;}
+        img {border: solid 5px rgb(222, 13, 13);
+            border-radius: 5px;
+            }
+        
+    </style>
+</head>
+<body>
+    {% load static %}
+    <br><br>
+    <center><h1>ANIMALS DESCRIPTION PAGE</h1></center>
+    <br><br>
+    <center><img src="{% static "picture/image.jpg" %}" alt="home" /></center>
+    
+<br>
+    <center> <h2><a href = "desc">Continue</a></h2></center>
+</body>
+</html>
